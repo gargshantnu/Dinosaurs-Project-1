@@ -7,31 +7,31 @@ function BaseStructure(species, weight, height, facts) {
 }
 
 BaseStructure.prototype.compareNameAndAddFact = function (name) {
-    let fact = "Our names are on equal position";
+    let fact = "Our names are on equal position.";
     if (this.name > name) {
-        fact = "My name comes first in dictionary";
+        fact = "My name comes first in dictionary.";
     } else if (this.name < name) {
-        fact = "Your name comes first";
+        fact = "Your name comes first.";
     }
     this.addFact(fact);
 }
 
 BaseStructure.prototype.compareWeightAndAddFact = function (weight) {
-    let fact = "Our weights are same";
+    let fact = "Our weights are same.";
     if (this.weight > weight) {
-        fact = "Yay! i weight more :P";
+        fact = "Yay! i weight more :P.";
     } else if (this.weight < weight) {
-        fact = "You are Fat :P";
+        fact = "You are Fat :P.";
     }
     this.addFact(fact);
 }
 
 BaseStructure.prototype.compareHeightAndAddFact = function (height) {
-    let fact = "Our heights are equal";
+    let fact = "Our heights are equal.";
     if (this.height > height) {
-        fact = "My hight is greater then yours";
+        fact = "My hight is greater then yours.";
     } else if (this.height < height) {
-        fact = "You are really tall bro";
+        fact = "You are really tall bro.";
     }
     this.addFact(fact);
 }
@@ -63,7 +63,7 @@ let dinos = [];
 
 fetch("dino.json")
     .then(response => response.json())
-    .then(json => dinos = json.Dinos.map(dino => new Dino(dino.species, dino.weight, dino.height, [dino.fact, `My species is ${dino.species}`, `I belong to ${dino.where}`, `My when value is ${dino.when}`])));
+    .then(json => dinos = json.Dinos.map(dino => new Dino(dino.species, dino.weight, dino.height, [dino.fact, `My species is ${dino.species}.`, `I belong to ${dino.where}.`, `My when value is ${dino.when}.`])));
 
 
 // Use IIFE to get human data from form
