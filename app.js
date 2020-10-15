@@ -6,7 +6,6 @@ function BaseStructure(species, weight, height, facts) {
     this.image = "images/" + species.toLowerCase() + ".png";
 }
 
-    // Create Dino Constructor
 BaseStructure.prototype.compareNameAndAddFact = function (name) {
     let fact = "Our names are on equal position";
     if (this.name > name) {
@@ -39,6 +38,11 @@ BaseStructure.prototype.compareHeightAndAddFact = function (height) {
 
 BaseStructure.prototype.addFact = function (fact) {
     this.facts.push(fact);
+}
+
+BaseStructure.prototype.getRandomFact = function () {
+    let index = Math.floor(Math.random() * 10) % this.facts.length;
+    return this.facts[index];
 }
 
 function Dino(species, weight, height, facts) {
