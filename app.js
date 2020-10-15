@@ -85,3 +85,7 @@ fetch("dino.json")
 
 
 // On button click, prepare and display infographic
+document.getElementById("btn")
+    .addEventListener("click", function () {
+    })
+
