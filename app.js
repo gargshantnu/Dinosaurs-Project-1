@@ -70,9 +70,9 @@ fetch("dino.json")
 function getHuman() {
     return (function () {
         let name = getInputValue("name");
-        let heightFeet = getInputValue("feet");
-        let heightInches = getInputValue("inches");
-        let weight = getInputValue("weight");
+        let heightFeet = parseFloat(getInputValue("feet"));
+        let heightInches = parseFloat(getInputValue("inches"));
+        let weight = parseFloat(getInputValue("weight"));
         // 12 inch = 1 feet
         return new Human(name, weight, heightFeet * 12 + heightInches, ["i am a cool human"]);
     })()
