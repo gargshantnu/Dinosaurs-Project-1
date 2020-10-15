@@ -88,8 +88,6 @@ document.getElementById("btn")
             dino.compareNameAndAddFact(human.name);
             dino.compareWeightAndAddFact(human.weight);
         });
-        console.log("Dinos ", dinos);
-        console.log("Human ", human);
         
         // Hide Form from UI
         document.getElementById("dino-compare").style.display = "none";
