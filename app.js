@@ -22,8 +22,11 @@ Human.prototype = Object.create(BaseStructure.prototype);
 Human.prototype.constructor = Human;
 
 
-    // Create Dino Objects
+let dinos = [];
 
+fetch("dino.json")
+    .then(response => response.json())
+    .then(json => dinos = json.Dinos.map(dino => new Dino(dino.species, dino.weight, dino.height, [dino.fact])));
 
     // Create Human Object
 
