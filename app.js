@@ -93,7 +93,12 @@ document.getElementById("btn")
         // Generate Grids and add back to DOM
         for (let dinoIndex in dinos) {
             let dino = dinos[dinoIndex];
-            let gridItemDiv = getGridItem(dino.species, dino.image, dino.getRandomFact());
+            let fact = dino.getRandomFact();
+            if (dino.weight < 1) {
+                // weight is less, ie its a bird
+                fact = "All birds are dinosaurs."
+            }
+            let gridItemDiv = getGridItem(dino.species, dino.image, fact);
 
             document.getElementById("grid")
                 .appendChild(gridItemDiv);
