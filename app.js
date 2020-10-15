@@ -91,3 +91,28 @@ document.getElementById("btn")
 function getInputValue(elementId) {
     return document.getElementById(elementId).value;
 }
+
+function getGridItem(species, imageUrl, fact) {
+    let gridItemDiv = document.createElement('div');
+    gridItemDiv.className = "grid-item";
+
+    // add species
+    let speciesDiv = document.createElement('h3');
+    speciesDiv.innerText = species;
+    gridItemDiv.appendChild(speciesDiv);
+
+    // add image
+    let imageDiv = document.createElement('img');
+    imageDiv.src = imageUrl;
+    gridItemDiv.appendChild(imageDiv);
+
+    // add fact
+    if (fact) {
+        // for humans, facts are not necessary
+        let factFiv = document.createElement('p');
+        factFiv.innerText = fact;
+        gridItemDiv.appendChild(factFiv);
+    }
+
+    return gridItemDiv;
+}
