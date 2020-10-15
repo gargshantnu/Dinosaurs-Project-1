@@ -7,6 +7,15 @@ function BaseStructure(species, weight, height, facts) {
 }
 
     // Create Dino Constructor
+BaseStructure.prototype.compareNameAndAddFact = function (name) {
+    let fact = "Our names are on equal position";
+    if (this.name > name) {
+        fact = "My name comes first in dictionary";
+    } else if (this.name < name) {
+        fact = "Your name comes first";
+    }
+    this.addFact(fact);
+}
 BaseStructure.prototype.addFact = function (fact) {
     this.facts.push(fact);
 }
