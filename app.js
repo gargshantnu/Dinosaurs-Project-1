@@ -63,11 +63,7 @@ let dinos = [];
 
 fetch("dino.json")
     .then(response => response.json())
-    .then(json => dinos = json.Dinos.map(dino => new Dino(dino.species, dino.weight, dino.height, [dino.fact])));
-
-    // Create Human Object
-
-    // Use IIFE to get human data from form
+    .then(json => dinos = json.Dinos.map(dino => new Dino(dino.species, dino.weight, dino.height, [dino.fact, `My species is ${dino.species}`, `I belong to ${dino.where}`, `My when value is ${dino.when}`])));
 
 
 // Use IIFE to get human data from form
