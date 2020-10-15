@@ -88,10 +88,8 @@ document.getElementById("btn")
             dino.compareNameAndAddFact(human.name);
             dino.compareWeightAndAddFact(human.weight);
         });
-        
         // Hide Form from UI
         document.getElementById("dino-compare").style.display = "none";
-        
         // Generate Grids and add back to DOM
         for (let dinoIndex in dinos) {
             let dino = dinos[dinoIndex];
