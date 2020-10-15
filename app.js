@@ -51,8 +51,9 @@ function Dino(species, weight, height, facts) {
 Dino.prototype = Object.create(BaseStructure.prototype);
 Dino.prototype.constructor = Dino;
 
-function Human(species, weight, height, facts) {
-    BaseStructure.call(this, species, weight, height, facts);
+function Human(name, weight, height, facts) {
+    BaseStructure.call(this, "human", weight, height, facts);
+    this.name = name;
 }
 Human.prototype = Object.create(BaseStructure.prototype);
 Human.prototype.constructor = Human;
