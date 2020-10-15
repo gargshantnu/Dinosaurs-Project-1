@@ -8,6 +8,13 @@ function BaseStructure(species, weight, height, facts){
 
     // Create Dino Constructor
 
+// Create Dino Constructor
+function Dino(species, weight, height, facts) {
+    BaseStructure.call(this, species, weight, height, facts);
+}
+Dino.prototype = Object.create(BaseStructure.prototype);
+Dino.prototype.constructor = Dino;
+
 
     // Create Dino Objects
 
