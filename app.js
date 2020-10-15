@@ -1,4 +1,4 @@
-function BaseStructure(species, weight, height, facts){
+function BaseStructure(species, weight, height, facts) {
     this.species = species;
     this.weight = weight;
     this.height = height;
