@@ -1,3 +1,10 @@
+function BaseStructure(species, weight, height, facts){
+    this.species = species;
+    this.weight = weight;
+    this.height = height;
+    this.facts = facts;
+    this.image = "images/" + species.toLowerCase() + ".png";
+}
 
     // Create Dino Constructor
 
