@@ -17,7 +17,7 @@ BaseStructure.prototype.compareNameAndAddFact = function (name) {
 }
 
 BaseStructure.prototype.compareWeightAndAddFact = function (weight) {
-    let fact = "Our weights are equal";
+    let fact = "Our weights are same";
     if (this.weight > weight) {
         fact = "Yay! i weight more :P";
     } else if (this.weight < weight) {
