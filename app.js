@@ -83,9 +83,34 @@ function getHuman() {
 document.getElementById("btn")
     .addEventListener("click", function () {
         const human = getHuman();
+        dinos.forEach(dino => {
+            dino.compareHeightAndAddFact(human.height);
+            dino.compareNameAndAddFact(human.name);
+            dino.compareWeightAndAddFact(human.weight);
+        });
         console.log("Dinos ", dinos);
         console.log("Human ", human);
-    })
+        
+        // Hide Form from UI
+        document.getElementById("dino-compare").style.display = "none";
+        
+        // Generate Grids and add back to DOM
+        for (let dinoIndex in dinos) {
+            let dino = dinos[dinoIndex];
+            let gridItemDiv = getGridItem(dino.species, dino.image, dino.getRandomFact());
+
+            document.getElementById("grid")
+                .appendChild(gridItemDiv);
+            if (dinoIndex == 3) {
+                // insert human tile at center
+                let humanTileDiv = getGridItem(human.species, human.image);
+
+                document.getElementById("grid")
+                    .appendChild(humanTileDiv);
+            }
+        }
+    });
+
 
 // hoisting
 function getInputValue(elementId) {
