@@ -7,8 +7,10 @@ function BaseStructure(species, weight, height, facts) {
 }
 
     // Create Dino Constructor
+BaseStructure.prototype.addFact = function (fact) {
+    this.facts.push(fact);
+}
 
-// Create Dino Constructor
 function Dino(species, weight, height, facts) {
     BaseStructure.call(this, species, weight, height, facts);
 }
