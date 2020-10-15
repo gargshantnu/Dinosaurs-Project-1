@@ -65,8 +65,17 @@ fetch("dino.json")
     // Use IIFE to get human data from form
 
 
-    // Create Dino Compare Method 1
-    // NOTE: Weight in JSON file is in lbs, height in inches. 
+// Use IIFE to get human data from form
+function getHuman() {
+    return (function () {
+        let name = getInputValue("name");
+        let heightFeet = getInputValue("feet");
+        let heightInches = getInputValue("inches");
+        let weight = getInputValue("weight");
+        // 12 inch = 1 feet
+        return new Human(name, weight, heightFeet * 12 + heightInches, ["i am a cool human"]);
+    })()
+};
 
     
     // Create Dino Compare Method 2
@@ -87,5 +96,12 @@ fetch("dino.json")
 // On button click, prepare and display infographic
 document.getElementById("btn")
     .addEventListener("click", function () {
+        const human = getHuman();
+        console.log("Dinos ", dinos);
+        console.log("Human ", human);
     })
 
+// hoisting
+function getInputValue(elementId) {
+    return document.getElementById(elementId).value;
+}
