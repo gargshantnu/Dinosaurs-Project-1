@@ -6,6 +6,10 @@ function BaseStructure(species, weight, height, facts) {
     this.image = "images/" + species.toLowerCase() + ".png";
 }
 
+BaseStructure.prototype.addFact = function (fact) {
+    this.facts.push(fact);
+};
+
 BaseStructure.prototype.compareNameAndAddFact = function (name) {
     let fact = "Our names are on equal position.";
     if (this.name > name) {
@@ -34,10 +38,6 @@ BaseStructure.prototype.compareHeightAndAddFact = function (height) {
         fact = "You are really tall bro.";
     }
     this.addFact(fact);
-};
-
-BaseStructure.prototype.addFact = function (fact) {
-    this.facts.push(fact);
 };
 
 BaseStructure.prototype.getRandomFact = function () {
