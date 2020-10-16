@@ -1,0 +1,23 @@
+{
+  "name": "dinosaurs-project-1",
+  "version": "1.0.0",
+  "description": "Udacity - Intermediate JS nano degree Dinosaurs Project",
+  "main": "server.js",
+  "scripts": {
+    "serve": "serve -s ./ -l 6000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gargshantnu/Dinosaurs-Project-1.git"
+  },
+  "author": "shantnu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gargshantnu/Dinosaurs-Project-1/issues"
+  },
+  "homepage": "https://github.com/gargshantnu/Dinosaurs-Project-1#readme",
+  "dependencies": {
+    "serve": "11.3.2"
+  }
+}
