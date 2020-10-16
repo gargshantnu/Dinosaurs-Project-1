@@ -1,4 +1,5 @@
-function BaseStructure(species, weight, height, facts) {
+// cant find any better name than "Animal", if can suggest some better name, that will be great.
+function Animal(species, weight, height, facts) {
     this.species = species;
     this.weight = weight;
     this.height = height;
@@ -6,11 +7,11 @@ function BaseStructure(species, weight, height, facts) {
     this.image = "images/" + species.toLowerCase() + ".png";
 }
 
-BaseStructure.prototype.addFact = function (fact) {
+Animal.prototype.addFact = function (fact) {
     this.facts.push(fact);
 };
 
-BaseStructure.prototype.compareNameAndAddFact = function (name) {
+Animal.prototype.compareNameAndAddFact = function (name) {
     let fact = "Our names are on equal position.";
     if (this.name > name) {
         fact = "My name comes first in dictionary.";
@@ -20,7 +21,7 @@ BaseStructure.prototype.compareNameAndAddFact = function (name) {
     this.addFact(fact);
 };
 
-BaseStructure.prototype.compareWeightAndAddFact = function (weight) {
+Animal.prototype.compareWeightAndAddFact = function (weight) {
     let fact = "Our weights are same.";
     if (this.weight > weight) {
         fact = "Yay! i weight more :P.";
@@ -30,7 +31,7 @@ BaseStructure.prototype.compareWeightAndAddFact = function (weight) {
     this.addFact(fact);
 };
 
-BaseStructure.prototype.compareHeightAndAddFact = function (height) {
+Animal.prototype.compareHeightAndAddFact = function (height) {
     let fact = "Our heights are equal.";
     if (this.height > height) {
         fact = "My hight is greater then yours.";
@@ -40,23 +41,23 @@ BaseStructure.prototype.compareHeightAndAddFact = function (height) {
     this.addFact(fact);
 };
 
-BaseStructure.prototype.getRandomFact = function () {
+Animal.prototype.getRandomFact = function () {
     let index = Math.floor(Math.random() * 10) % this.facts.length;
     return this.facts[index];
 };
 
 function Dino(species, weight, height, facts) {
-    BaseStructure.call(this, species, weight, height, facts);
+    Animal.call(this, species, weight, height, facts);
 }
-Dino.prototype = Object.create(BaseStructure.prototype);
+Dino.prototype = Object.create(Animal.prototype);
 Dino.prototype.constructor = Dino;
 
 function Human(name, weight, height) {
-    // here "Human" is passes because it represents species.
-    BaseStructure.call(this, "human", weight, height, []);
+    // here "Human" is passes because it represents species. For name, human object have its own property
+    Animal.call(this, "human", weight, height, []);
     this.name = name;
 }
-Human.prototype = Object.create(BaseStructure.prototype);
+Human.prototype = Object.create(Animal.prototype);
 Human.prototype.constructor = Human;
 
 
