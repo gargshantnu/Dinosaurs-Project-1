@@ -14,7 +14,7 @@ BaseStructure.prototype.compareNameAndAddFact = function (name) {
         fact = "Your name comes first.";
     }
     this.addFact(fact);
-}
+};
 
 BaseStructure.prototype.compareWeightAndAddFact = function (weight) {
     let fact = "Our weights are same.";
@@ -24,7 +24,7 @@ BaseStructure.prototype.compareWeightAndAddFact = function (weight) {
         fact = "You are Fat :P.";
     }
     this.addFact(fact);
-}
+};
 
 BaseStructure.prototype.compareHeightAndAddFact = function (height) {
     let fact = "Our heights are equal.";
@@ -34,16 +34,16 @@ BaseStructure.prototype.compareHeightAndAddFact = function (height) {
         fact = "You are really tall bro.";
     }
     this.addFact(fact);
-}
+};
 
 BaseStructure.prototype.addFact = function (fact) {
     this.facts.push(fact);
-}
+};
 
 BaseStructure.prototype.getRandomFact = function () {
     let index = Math.floor(Math.random() * 10) % this.facts.length;
     return this.facts[index];
-}
+};
 
 function Dino(species, weight, height, facts) {
     BaseStructure.call(this, species, weight, height, facts);
@@ -75,8 +75,8 @@ function getHuman() {
         let weight = parseFloat(getInputValue("weight"));
         // 12 inch = 1 feet
         return new Human(name, weight, heightFeet * 12 + heightInches, ["i am a cool human"]);
-    })()
-};
+    })();
+}
 
 
 // On button click, prepare and display infographic
