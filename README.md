@@ -1,5 +1,19 @@
 # Object Oriented Javascript 
 
+## How to run
+
+1. Install node dependencies
+
+```shell
+npm install
+```
+
+1. To run the code:
+
+```shell
+node serve
+```
+
 ## Student Instructions
 
 ### Big Picture
