@@ -51,8 +51,9 @@ function Dino(species, weight, height, facts) {
 Dino.prototype = Object.create(BaseStructure.prototype);
 Dino.prototype.constructor = Dino;
 
-function Human(name, weight, height, facts) {
-    BaseStructure.call(this, "human", weight, height, facts);
+function Human(name, weight, height) {
+    // here "Human" is passes because it represents species.
+    BaseStructure.call(this, "human", weight, height, []);
     this.name = name;
 }
 Human.prototype = Object.create(BaseStructure.prototype);
@@ -74,7 +75,7 @@ function getHuman() {
         let heightInches = parseFloat(getInputValue("inches"));
         let weight = parseFloat(getInputValue("weight"));
         // 12 inch = 1 feet
-        return new Human(name, weight, heightFeet * 12 + heightInches, ["i am a cool human"]);
+        return new Human(name, weight, heightFeet * 12 + heightInches);
     })();
 }
 
